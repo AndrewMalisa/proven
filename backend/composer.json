@@ -1,0 +1,11 @@
+{
+  "name": "95-degree-tech/proven-backend",
+  "description": "PHP backend for the Proven project",
+  "type": "project",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

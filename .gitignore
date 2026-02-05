@@ -44,3 +44,10 @@ coverage/
 *.swo
 .history/
 
+########################
+# PHP / Composer       #
+########################
+vendor/
+composer.lock
+
+
