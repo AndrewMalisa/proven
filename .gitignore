@@ -1,0 +1,46 @@
+########################
+# Node / Vite frontend #
+########################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Vite / build output
+dist/
+build/
+.vite/
+
+########################
+# Environment & config #
+########################
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+########################
+# Logs & coverage      #
+########################
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+.nyc_output
+coverage/
+
+########################
+# Editor / OS files    #
+########################
+.vscode/
+.idea/
+*.swp
+*.swo
+.history/
+
