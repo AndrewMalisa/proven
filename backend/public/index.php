@@ -7,4 +7,3 @@ echo json_encode([
     'status' => 'ok',
     'message' => 'PHP backend is ready',
 ]);
-

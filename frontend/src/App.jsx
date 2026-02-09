@@ -1,10 +1,10 @@
 import './App.css'
+import Register from './pages/Register.jsx'
 
 function App() {
   return (
     <div className="app">
-      <h1>Proven</h1>
-      <p>Start building your app here.</p>
+      <Register />
     </div>
   )
 }
