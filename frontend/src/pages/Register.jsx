@@ -16,7 +16,9 @@ function Register() {
     setSuccess('')
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/register.php', {
+      console.log('Sending request with:', { name, email, password: '***' })
+      console.log('Request body:', JSON.stringify({ name, email, password }))
+      const response = await fetch('http://127.0.0.1:9000/api/register.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
