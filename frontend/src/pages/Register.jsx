@@ -43,6 +43,7 @@ function Register() {
 
   return (
     <div className="register-page">
+    
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
