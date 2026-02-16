@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useAuth } from '../contexts/AuthContext.jsx'
 import './Login.css'
 
 function Login() {
+  const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -33,14 +35,12 @@ function Login() {
       
       if (data.success) {
         setSuccess('Login successful!')
-        // Store user data in localStorage for session management
-        localStorage.setItem('user', JSON.stringify(data.user))
-        // You can redirect to dashboard here
-        // window.location.href = '/dashboard'
-        
         // Clear form
         setEmail('')
         setPassword('')
+        
+        // Use AuthContext login function
+        login(data.user)
       } else {
         setError(data.message || 'Login failed')
       }
@@ -52,43 +52,43 @@ function Login() {
   }
 
   return (
-    <div className='login-page'>
+    <div className="login-page">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor="email">Email</label>
           <input
-            id='email'
-            type='email'
+            id="email"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            placeholder='Enter your email'
+            placeholder="Enter your email"
           />
         </div>
 
         <div>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor="password">Password</label>
           <input
-            id='password'
-            type='password'
+            id="password"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            placeholder='Enter your password'
+            placeholder="Enter your password"
           />
         </div>
 
-        <button type='submit' disabled={loading}>
+        <button type="submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
         </button>
 
-        {error && <p className='error-message'>{error}</p>}
-        {success && <p className='success-message'>{success}</p>}
+        {error && <p className="error-message">{error}</p>}
+        {success && <p className="success-message">{success}</p>}
       </form>
       
-      <div className='login-footer'>
-        <p>Don't have an account? <a href='/register'>Register here</a></p>
+      <div className="login-footer">
+        <p>Don't have an account? <a href="/register">Register here</a></p>
       </div>
     </div>
   )

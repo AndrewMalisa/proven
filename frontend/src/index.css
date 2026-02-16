@@ -19,9 +19,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
 }
 
